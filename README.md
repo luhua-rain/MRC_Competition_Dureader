@@ -23,4 +23,4 @@
 * 运行 python3 predicting.py
 * 到metric目录下， 运行 python3 mrc_eval.py predicts.json ref.json v1 即可
 *****
-> data下的trainset、devset有部份数据，可以换成全部数据
+> data下的trainset、devset有部份数据，可以换成全部数据。

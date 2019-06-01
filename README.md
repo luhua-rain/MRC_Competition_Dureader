@@ -7,7 +7,7 @@
 
 ### 运行步骤如下:
 ##### 一、数据准备：
-#####                将trainset、devset等数据放在data文件里
+    ##### 将trainset、devset等数据放在data文件里
     2、到handle_data目录下运行 sh run.sh --para_extraction
 ##### 二、制作dataset：
     1、到dataset目录下运行两次 python3 run_squad.py，第一次运行结束后要修改run_squad.py的参数，具体做法run_squad.py末尾有具体说明

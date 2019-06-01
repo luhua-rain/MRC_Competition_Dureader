@@ -1,9 +1,9 @@
 # Dureader-Bert
 2019 Dureader机器阅读理解 单模型代码 第七
 
-> 竞赛最终结果第七名, ROUGE-L:53.62, BLEU-4:54.97
-> 代码上传前已经跑通，所以如果碰到报错之类的信息，请不要慌，可能是代码路径不对、缺少安装包等问题，一步步解决，可以提issue。
-> 若有提升模型效果的想法，十分欢迎前来交流（邮箱：1643230637@qq.com）
+> * 竞赛最终结果第七名, ROUGE-L:53.62, BLEU-4:54.97
+> * 代码上传前已经跑通，所以如果碰到报错之类的信息，请不要慌，可能是代码路径不对、缺少安装包等问题，一步步解决，可以提issue。
+> * 若有提升模型效果的想法，十分欢迎前来交流（邮箱：1643230637@qq.com）
 
 ##### 环境(不支持cpu)
 * python3
@@ -24,3 +24,4 @@
 * 到metric目录下， 运行 python3 mrc_eval.py predicts.json ref.json v1 即可
 *****
 > data下的trainset、devset有部份数据，可以换成全部数据。
+![image](https://github.com/basketballandlearn/Dureader-Bert/blob/master/1.png)

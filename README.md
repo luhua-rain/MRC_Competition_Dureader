@@ -2,8 +2,8 @@
 2019 Dureader机器阅读理解 排名第七
 
 ### 环境：
-    #### python3
-    #### 安装pytorch-pretrained-bert这个库，pip install pytorch-pretrained-bert
+    ####   python3
+    ####   安装pytorch-pretrained-bert这个库，pip install pytorch-pretrained-bert
 
 ### 运行步骤如下:
 

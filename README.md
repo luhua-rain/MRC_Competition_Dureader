@@ -16,6 +16,8 @@
 * torch 1.0
 * 依赖包 pytorch-pretrained-bert、tqdm、pickle、torchtext
 
+[visual basic](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)
+
 ### 运行流程  
 ######   一、数据处理：
 * 将trainset、devset等数据放在data文件里 (data下的trainset、devset有部份数据，可以换成全部数据。)

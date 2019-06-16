@@ -18,7 +18,7 @@
 ### Reference
 *[Bert论文](https://arxiv.org/pdf/1810.04805.pdf)  
 *[Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
-&emsp [Dureader](https://github.com/baidu/DuReader)  
+&emsp;[Dureader](https://github.com/baidu/DuReader)  
 
 ### 运行流程  
 ###### 一、数据处理：

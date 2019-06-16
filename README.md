@@ -11,13 +11,13 @@
 * 代码上传前已经跑通，所以如果碰到报错之类的信息，可能是代码路径不对、缺少安装包等问题，一步步解决，可以提issue。
 * 若有提升模型效果的想法，十分欢迎前来交流（邮箱：1643230637@qq.com）
 
-#### 环境(不支持cpu)
+### 环境(不支持cpu)
 * python3
 * torch 1.0
 * 依赖包 pytorch-pretrained-bert、tqdm、pickle、torchtext
 
-##### 运行流程  
-###### 一、数据准备：
+### 运行流程  
+###### 一、数据处理：
 * 将trainset、devset等数据放在data文件里 (data下的trainset、devset有部份数据，可以换成全部数据。)
 * 到handle_data目录下运行 sh run.sh --para_extraction, 便会将处理后的数据放在extracted下的对应文件夹里
 ###### 二、制作dataset：
@@ -28,6 +28,6 @@
 * 到predict目录下运行 python3 util.py (测试集太多，也可以在该文件里将路径改为验证集，默认为验证集路径)
 * 运行 python3 predicting.py
 * 到metric目录下， 运行 python3 mrc_eval.py predicts.json ref.json v1 即可
-*****
+
 ##### 排行榜：
 ![image](https://github.com/basketballandlearn/Dureader-Bert/blob/master/1.png)

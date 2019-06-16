@@ -16,12 +16,12 @@
 * torch 1.0
 * 依赖包 pytorch-pretrained-bert、tqdm、pickle、torchtext
 ### Reference
-[Bert论文](https://arxiv.org/pdf/1810.04805.pdf)  
-[Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
-[Dureader](https://github.com/baidu/DuReader)  
+  [Bert论文](https://arxiv.org/pdf/1810.04805.pdf)  
+  [Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
+  [Dureader](https://github.com/baidu/DuReader)  
 
 ### 运行流程  
-######   一、数据处理：
+###### 一、数据处理：
 * 将trainset、devset等数据放在data文件里 (data下的trainset、devset有部份数据，可以换成全部数据。)
 * 到handle_data目录下运行 sh run.sh --para_extraction, 便会将处理后的数据放在extracted下的对应文件夹里
 ###### 二、制作dataset：

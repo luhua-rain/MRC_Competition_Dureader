@@ -16,7 +16,7 @@
 * torch 1.0
 * 依赖包 pytorch-pretrained-bert、tqdm、pickle、torchtext
 
-[visual basic](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)
+[bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)
 
 ### 运行流程  
 ######   一、数据处理：

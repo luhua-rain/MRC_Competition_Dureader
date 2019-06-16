@@ -18,8 +18,8 @@
 
 ### Reference
 &emsp;[Bert论文](https://arxiv.org/pdf/1810.04805.pdf)  
-&emsp;[Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
 &emsp;[Dureader](https://github.com/baidu/DuReader)  
+&emsp;[Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
 &emsp;[pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT)
 
 ### 运行流程  

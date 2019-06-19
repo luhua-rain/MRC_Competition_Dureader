@@ -9,9 +9,9 @@
 ### 代码研读：
 * 代码主要删减大量不必要代码，也将英文的数据处理改为中文的数据处理，方便阅读和掌握bert的代码。
 * handle_data文件夹是处理Dureader的数据，与比赛有关，与bert没有多大关系。
-* dataset文件夹是处理中文数据的代码，大致是将文字转化为bert的输入：(inputs_ids,token_type_ids,input_mask),然后做成dataloader。
+* dataset文件夹是处理中文数据的代码，大致是将文字转化为bert的输入：(inputs_ids,token_type_ids,input_mask), 然后做成dataloader。
 * predict文件夹是用来预测的，基本与训练时差不多，一些细节不一样（输出）。
-* metric文件夹是用来计算分数的，包括ROUG-L、BLEU-4。
+* metric文件夹是用来计算分数的，包括ROUGE-L、BLEU-4。
 * 总的来说，只要输入符合bert的输入：(inputs_ids,token_type_ids,input_mask)就可以了。
 
 ### 小小提示：

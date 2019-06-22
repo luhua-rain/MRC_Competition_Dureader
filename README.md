@@ -3,10 +3,10 @@
 
 ## 哈工大讯飞联合实验室发布的中文全词覆盖BERT
 [论文地址]( https://arxiv.org/abs/1906.08101)  
-[下载地址]( https://github.com/ymcui/Chinese-BERT-wwm)  
-* 只需将要加载的预训练模型换位压缩包内的chinese_wwm_pytorch.bin，即修改from_pretrained函数中weights_path和config_file即可。
+[预训练模型下载地址]( https://github.com/ymcui/Chinese-BERT-wwm)  
+* 只需将要加载的预训练模型换为压缩包内的chinese_wwm_pytorch.bin，即修改from_pretrained函数中weights_path和config_file即可。
 
-## 以下是谷歌发布的中文bert与哈工大发布的中文全词覆盖BERT在Dureader上的效果对比
+## 谷歌发布的中文bert与哈工大发布的中文全词覆盖BERT在Dureader上的效果对比
 
 | 模型 | ROUGE-L | BLEU-4 |
 | ------ | ------ | ------ |

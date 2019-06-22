@@ -1,7 +1,18 @@
 # Dureader-Bert
 2019 Dureader机器阅读理解 单模型代码。
-此次比赛只是下游应用，这份代码已将适用于英文的给重写为适用于中文的，代码也给出相应注释，只需微改数据处理部份即可用于各种任务。
-希望能有些帮助！
+
+## 哈工大讯飞联合实验室发布的中文全词覆盖BERT
+[论文地址]( https://arxiv.org/abs/1906.08101)  
+[下载地址]( https://github.com/ymcui/Chinese-BERT-wwm)  
+* 只需将要加载的预训练模型换位压缩包内的chinese_wwm_pytorch.bin，即修改from_pretrained函数中weights_path和config_file即可。
+
+## 以下是谷歌发布的中文bert与哈工大发布的中文全词覆盖BERT在Dureader上的效果对比
+
+| 模型 | ROUGE-L | BLEU-4 |
+| ------ | ------ | ------ |
+| 谷歌bert | 49.3 | 50.2 | 
+| 哈工大bert| 50.32 | 51.4 |
+
 
 ### 许多人询问，说明一下：
 * 1、数据处理是自己写的，不用squad的数据处理，可以换其他任何数据集，数据输入符合就行，也可以自己重写
@@ -30,7 +41,7 @@
 ### Reference
 &emsp;[Bert论文](https://arxiv.org/pdf/1810.04805.pdf)  
 &emsp;[Dureader](https://github.com/baidu/DuReader)  
-&emsp;[Bert论文(中文翻译)](https://github.com/yuanxiaosc/BERT_Paper_Chinese_Translation)  
+&emsp;[Bert中文全词覆盖论文]( https://arxiv.org/abs/1906.08101)  
 &emsp;[pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT)
 
 ### 运行流程  

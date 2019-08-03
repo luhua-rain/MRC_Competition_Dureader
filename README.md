@@ -17,11 +17,11 @@
 
 ## 许多人询问，说明一下：
 * 1、数据处理是自己写的，不用squad的数据处理，可以换其他任何数据集，数据输入符合就行，也可以自己重写
-* 2、比赛提升主要使用 Multi-task训练，由于代码繁重，故这份代码只有单任务训练
+* 2、比赛提升主要使用 Multi-task训练、以及答案抽取，由于代码繁重，故这份代码只有单任务训练
 * 3、对于输出层我只使用了一层全连接，也可以自己修改为论文里的输出层，如下：
 ![image](https://github.com/basketballandlearn/Dureader-Bert/blob/master/2.png)
 
-## 代码研读：
+## 代码：
 * 代码主要删减大量不必要代码，也将英文的数据处理改为中文的数据处理，方便阅读和掌握bert的代码。
 * handle_data文件夹是处理Dureader的数据，与比赛有关，与bert没有多大关系。
 * dataset文件夹是处理中文数据的代码，大致是将文字转化为bert的输入：(inputs_ids,token_type_ids,input_mask), 然后做成dataloader。

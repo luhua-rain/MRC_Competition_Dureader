@@ -1,19 +1,20 @@
 
+## 最终排名：亚军
 
-## 成语阅读理解
+### 比赛介绍
 
-
+* 比赛名称：成语阅读理解 (Chinese IDiom for Cloze Test)
+* [比赛链接](https://www.biendata.xyz/competition/idiom/?source=jiqizhixin2)
+* 该数据集也被中文CLUE采用作为评测数据集
 
 #### 最终思路
 
 * **当作完形填空(cloze style))的任务来做**
 
-  
 
 ##### 数据处理：
 
 * 每一条数据有多个有多个content，我们将它拆分----以每个content作为一条训练数据，每个content有多个  ‘*#idiom@@@@@@#*’ ，对于每一条训练数据，尽量保持文本信息（最大长度：512）。
-
 
 
 ##### 训练时：
@@ -27,18 +28,15 @@
 * 对于每一条训练数据（多条content），通过模型，得到 每个 ‘*#idiom@@@@@@#*’  空对3848个成语的打分。之后，先通过10个候选成语排除其他成语的干扰，然后对每个空（ ‘*#idiom@@@@@@#*’ ）采取贪婪策略（**对于还没有被选中的空，每次选择得分最高的**）并保证不重复，来得到最后的预测结果。
 
 
-
 #### 最终模型
 
 * 经过许多实验，我们最终选择 xlnet + lstm(768, 3096) + LN + linear(3096, 3848) 作为最终模型 
 
-  
 
 #### 模型融合
 
 1.  **投票：**7个模型进行投票，去票数最多的作为答案，若出现票数一样的情况，取最好的单模（7个模型中）的预测作为答案(7个模型为：bert、ernie、xlnet 以及以不同随机种子训练出来的模型)
 2. **logits 融合：**将模型的输出按照比例相加后去预测答案，比例为每个模型的得分，归一化后的数值。
-
 
 
 #### 决赛单模
@@ -48,8 +46,7 @@
   2.  计算loss：将训练数据经过我们的单模，得到logits，将经过softxmax后得到的logits与 label_1 计算交叉熵（要比均方差要好），得到 loss_1，然后将该logits经过分类层与 label_2计算交叉熵，得到loss_2；
   3. loss = 0.9 * loss_1 + 0.1 * loss_2
 * 最终单模比蒸馏前提高了1个点
-* 该想法全部参考论文：***Distilling the Knowledge in a Neural Network***
-
+* 想法参考论文：***Distilling the Knowledge in a Neural Network***
 
 
 #### 实验 
@@ -83,5 +80,5 @@
     * 对这三个：embedding的输出、attention矩阵中的得分矩阵、每层layer的输出，做均方差，对输出的                    logits做交叉熵
     * 但是embedding的维度、隐藏节点个数不一样怎么计算均方差呢？
       * 对于小模型，embedding之后得到的矩阵再通过linear层映射到与teacher的embedding一样的维度，这样就可以计算均方差了；每层layer的输出同理。
-        * 这样说的话，那么用来映射的linear层怎么办？是额外加一个用来将teacher维度映射到student维度的linear层映射回来，还是这个映射层只在训练时使用，推理时不用？CV是取后者，NLP不懂。
+        * 这样说的话，那么用来映射的linear层怎么办？是额外加一个用来将teacher维度映射到student维度的linear层映射回来，还是这个映射层只在训练时使用，推理时不用？CV是取后者，NLP具体怎么操作看情况。
   * 如果说teacher的模型与student一样，那就不用映射了，但是这样的话无法使用多个结构不同的teacher来蒸馏了。

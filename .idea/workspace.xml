@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76bf1be8-6346-4bb8-9ba3-3e565b335416" name="Default Changelist" comment="" />
+    <list default="true" id="76bf1be8-6346-4bb8-9ba3-3e565b335416" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Dureader_robust_2020/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Dureader_robust_2020/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

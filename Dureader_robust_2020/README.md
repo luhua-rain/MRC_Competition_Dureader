@@ -28,7 +28,7 @@ roberta_wwm_ext_large
 * 包括训练/验证/预测，--do_train、--evaluate_during_training、--do_test
 ###### 三、无答案问题
 * 如果包含无答案类型，加入--version_2_with_negative就行
-
+* 将数据替换为Dureader2021_checklist的数据可以直接跑
 
 #### 排行榜：
 ![image](https://github.com/basketballandlearn/MRC_Competition_Repositories/blob/master/Dureader_robust_2020/1.png)

@@ -8,11 +8,12 @@
 
 #### 仓库介绍
 * 优化
-  * 代码基于Hugginface的squad代码。之前自己开发，迭代版本多，而且很多细节没有考虑到（如：tok_to_orig、check_is_max_context以及空格、特殊字符、滑窗后答案的移动等处理），
-    索性就直接在Hugginface的squad代码上迭代。 
+  * 代码基于Hugginface的squad代码。之前自己开发，迭代版本多，而且很多细节没有考虑到（如：tok_to_orig、check_is_max_context以及空格、特殊字符、滑窗后答案的移动等处理），<br>
+    索性就直接在Hugginface的squad代码上迭代。 <br>
     但是其实现的类缺乏对中文的支持，推理结果有一些影响，修改之后此库能较好的支持中文，抽取的答案精度也尽可能不受影响。
 * 由来
-  * 此仓库原本是我2019年参加百度举办的Dureader比赛的代码分享。由于BERT刚出来不久，预训练模型还没普及，用的都是BiDAF、QANet等。torch也没搞懂是啥，只觉得BERT名气挺大的，就用了，混了个第七，也蹭了挺多start，搭了一波顺风车 嘿嘿😁！从此便开启了调参之旅😁！
+  * 此仓库原本是我2019年参加百度举办的Dureader比赛的代码分享。由于BERT刚出来不久，预训练模型还没普及，用的都是BiDAF、QANet等。<br>
+    头一次就用bert，就混了个第七，蹭了star，搭了一波顺风车 嘿嘿😁！从此便开启了调参之旅😁！
 * 目的
   * 此仓库是我这几年（2019-2021）参加各种中文机器阅读理解（MRC）比赛的开源分享
     * 现在比赛都被大佬们拿下，很多方法细节没有公开，导致"散户"的我上分困难😰。所以这个库旨在为大家提供一个效果不错的**强基线**，大家可以在这基础上改进，也可以借鉴融合进自己的方法。
@@ -30,16 +31,21 @@ pip install transformers==2.10.0
 * 拿现有的预训练模型基于这套代码微调可以有一个很高的基线，已有小伙伴在Dureader比赛中取得很高的成绩
 
 
-### 运行流程  
+### 运行流程
+
 ###### 一、数据 & 模型：
 * 将train、dev、test等数据放在datasets文件夹下 ([格式符合squad的就行](https://aistudio.baidu.com/aistudio/competition/detail/66))
 * 指定模型目录
+
 ###### 二、一键运行
 ```
 cd main
-sh train_bert.sh
-(包括训练/验证/预测：--do_train、--evaluate_during_training、--do_test)
 ```
+```可修改脚本对应参数
+sh train_bert.sh
+```
+(包括训练/验证/预测：--do_train、--evaluate_during_training、--do_test)
+
 ###### 三、无答案问题
 * 如果包含无答案类型数据，加入--version_2_with_negative就行
 * 将数据替换为Dureader2021_checklist的数据可以直接跑(已有多位小伙伴在2021_checklist数据集上测试了效果，大概处于F1 65这样)

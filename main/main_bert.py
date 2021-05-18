@@ -932,7 +932,7 @@ def main():
         do_lower_case=args.do_lower_case,
         cache_dir=args.cache_dir if args.cache_dir else None,
     )
-    model = BertForQuestionAnswering.from_pretrained(
+    model = AutoModelForQuestionAnswering.from_pretrained(
         args.model_name_or_path,
         from_tf=bool(".ckpt" in args.model_name_or_path),
         config=config,
@@ -981,7 +981,7 @@ def main():
         torch.save(args, os.path.join(args.output_dir, "training_args.bin"))
 
         # Load a trained model and vocabulary that you have fine-tuned
-        model = BertForQuestionAnswering.from_pretrained(args.output_dir)
+        model = AutoModelForQuestionAnswering.from_pretrained(args.output_dir)
         tokenizer = BertTokenizer.from_pretrained(args.output_dir, do_lower_case=args.do_lower_case)
         model.to(args.device)
 
@@ -1006,7 +1006,7 @@ def main():
         for checkpoint in checkpoints:
             # Reload the model
             global_step = checkpoint.split("-")[-1] if len(checkpoints) > 1 else ""
-            model = BertForQuestionAnswering.from_pretrained(checkpoint)
+            model = AutoModelForQuestionAnswering.from_pretrained(checkpoint)
             model.to(args.device)
 
             # Evaluate
@@ -1020,12 +1020,12 @@ def main():
     if args.do_test and args.local_rank in [-1, 0]:
         if args.do_train:
             checkpoint = f'{args.output_dir}/checkpoint-{args.best_val_step}'
-            model = BertForQuestionAnswering.from_pretrained(checkpoint)
+            model = AutoModelForQuestionAnswering.from_pretrained(checkpoint)
             model.to(args.device)
             evaluate(args, model, tokenizer, prefix='test', step=args.best_val_step)
         else:
             global_step = args.model_name_or_path.split("-")[-1]
-            model = BertForQuestionAnswering.from_pretrained(args.model_name_or_path)
+            model = AutoModelForQuestionAnswering.from_pretrained(args.model_name_or_path)
             model.to(args.device)
             evaluate(args, model, tokenizer, prefix='test', step=global_step)
     if args.do_merge:

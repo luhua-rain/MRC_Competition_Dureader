@@ -6,6 +6,13 @@
 * 5/18：开源代码
 
 
+## Contents
+  - [仓库介绍](#仓库介绍)
+  - [运行流程](#运行流程)
+  - [基于大规模MRC数据再训练](#基于大规模MRC数据再训练)
+  - [相关比赛](#相关比赛)
+
+
 ## 仓库介绍
 * **优化**
   * 代码基于Hugginface的squad代码。之前自己开发，迭代版本多，且很多细节没有考虑到（如：空格、特殊字符、滑窗后答案的移动等处理），<br>
@@ -57,7 +64,44 @@ pip install transformers==2.10.0
 * 拿此库发布的再训练模型，基于这套代码微调可以有一个很高的基线，已有小伙伴在Dureader2021比赛中取得top10的成绩了😁
 
 
-## 比赛
+## 基于大规模MRC数据再训练
+* 数据来源（百万规模）
+  网上收集的大量中文MRC数据
+  （其中包括 Dureader、WebQA、SogoQA、Squad-2.0、CMRC-2018、法研杯、军事阅读理解、EpidemicQA以及自己爬取的网页数据等，
+  这里面包括了百度百科、搜狗搜索、军事、法律、医疗、教育等领域。）
+* 用此库代码进行MRC任务的再训练，将得到的模型放到下游任务微调可比直接使用预训练语言模型提高`3个点`以上（Dureader上的的实验结果，其他数据集还没具体测试）
+```
+--- 基于此库发布的再训练模型，在dureader2021 A榜的详细效果对比
++-----------------------------------------------+
+|                                       |  F1   |
++-----------------------------------------------+
+| macbert-large (基于哈工大预训练语言模型)  | 65.x  |
++-----------------------------------------------+
+| macbert-large                         | 68.13 |
++-----------------------------------------------+
+| roberta-wwm-ext-large                 | 67.51 |
++-----------------------------------------------+
+| albert-xlargee                        | 65.24 |
++-----------------------------------------------+
+| xlabert-xxlarge                       | 65.79 |
++-----------------------------------------------+
+```
+```
+----- 使用方法 -----
+from transformers import AutoTokenizer, AutoModelForQuestionAnswering
+
+model_name = "chinese_pretrain_mrc_roberta_wwm_ext_large" # "chinese_pretrain_mrc_macbert_large"
+
+# Use in Transformers
+tokenizer = AutoTokenizer.from_pretrained(f"luhua/{model_name}")
+model = AutoModelForQuestionAnswering.from_pretrained(f"luhua/{model_name}")
+
+# Use locally（通过 https://huggingface.co/luhua 下载模型及配置文件）
+tokenizer = BertTokenizer.from_pretrained(f'./{model_name}')
+model = AutoModelForQuestionAnswering.from_pretrained(f'./{model_name}')
+```
+
+## 相关比赛
 
 * **Dureader checklist 2021语言与智能技术竞赛**
 * **疫情政务问答助手**（第一）
@@ -65,26 +109,3 @@ pip install transformers==2.10.0
 * **成语阅读理解**（第二）
 * **莱斯杯**（第三）
 * **Dureader 2019语言与智能技术竞赛**（第七）
-
-
-## 基于大规模MRC数据再训练
-* 数据来源（百万规模）
-  网上收集的大量中文MRC数据
-  （其中包括 Dureader、WebQA、SogoQA、Squad-2.0、CMRC-2018、法研杯、军事阅读理解、EpidemicQA以及自己爬取的网页数据等，
-  这里面包括了百度百科、搜狗搜索、军事、法律、医疗、教育等领域。）
-* 用此库代码进行MRC任务的再训练，将得到的模型放到下游任务微调可比直接使用预训练语言模型提高4个点以上（Dureader上的的实验结果，其他数据集还没具体测试）
-
-```
---- 基于以下再训练模型，在dureader2021 A榜 详细效果对比
-+-----------------------+-------+
-|                       |  F1   |
-+-----------------------+-------+
-| macbert-large         | 68.13 |
-+-----------------------+-------+
-| roberta-wwm-ext-large | 67.51 |
-+-----------------------+-------+
-| albert-xlargee        | 65.24 |
-+-----------------------+-------+
-| xlabert-xxlarge       | 65.79 |
-+-----------------------+-------+
-```

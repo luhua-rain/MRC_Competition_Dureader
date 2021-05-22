@@ -4,10 +4,6 @@
     <list default="true" id="76bf1be8-6346-4bb8-9ba3-3e565b335416" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/_README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/train_bert.sh" beforeDir="false" afterPath="$PROJECT_DIR$/main/train_bert.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -64,6 +64,7 @@ sh test_bert.sh
   ```
   pip install transformers==2.10.0 
   ```
+* 代码基于transformers 2.10.0版本，但是预训练模型可以使用其他版本加载。转换为tf可使用[转换](https://github.com/huggingface/transformers/blob/master/src/transformers/models/bert/convert_bert_pytorch_checkpoint_to_original_tf.py)
 
 ## 基于大规模MRC数据再训练
 

@@ -130,5 +130,5 @@ model = AutoModelForQuestionAnswering.from_pretrained(f'./{model_name}')
 * **Dureader 2019语言与智能技术竞赛**（第七）
 
 ## 感谢
-[zhangxiaoyu](https://github.com/Decalogue)  [huanghui](https://github.com/huanghuidmml)  [nanyanlai](https://github.com/nanfulai)
+[zhangxiaoyu](https://github.com/Decalogue)  [huanghui](https://github.com/huanghuidmml)  [nanfulai](https://github.com/nanfulai)
 

@@ -2,7 +2,7 @@
 
 
 ***************************************************** **更新** *****************************************************
-* 5/21：**开源基于大规模MRC数据再训练**的模型（包括`roberta-wwm-large`、`macbert-large`、`albert-xxlarge`、`albert-xlarge`）
+* 5/21：**开源基于大规模MRC数据再训练**的模型（包括`roberta-wwm-large`、`macbert-large`、`albert-xxlarge`）
 * 5/18：开源代码
 
 
@@ -22,7 +22,7 @@
   * 此仓库来源于我2019年参加Dureader比赛的代码库，之后就在此库上开源我参加各种中文机器阅读理解（MRC）比赛的方案和代码 [相关比赛](#相关比赛)
 * **目的**
   * "散户"的我上分困难😰，所以这个库旨在为大家提供一个效果不错的`强基线`。大家可以在这基础上改进，也可以借鉴融合进自己的方法
-  * 其次，我开源了多个基于机器阅读理解数据（百万）训练后的模型，在MRC任务下微调，效果大幅优于使用预训练的语言模型
+  * 其次，此库开源了多个基于机器阅读理解数据（百万）训练后的模型，在MRC任务下微调，效果大幅优于使用预训练的语言模型
   * 有些由于"年代久远"也整理不过来了（`others`文件夹下的比赛）。不过方案和代码都有，对比着看很容易就看懂了
 
 
@@ -65,6 +65,7 @@ sh test_bert.sh
   pip install transformers==2.10.0 
   ```
 * 代码基于transformers 2.10.0版本，但是预训练模型可以使用其他版本加载。转换为tf可使用[转换](https://github.com/huggingface/transformers/blob/master/src/transformers/models/bert/convert_bert_pytorch_checkpoint_to_original_tf.py)
+* mrc预训练相关参数 [参考](https://github.com/basketballandlearn/MRC_Competition_Dureader/issues/33)
 
 ## 基于大规模MRC数据再训练
 

@@ -8,16 +8,16 @@
 
 ## Contents
   - [基于大规模MRC数据再训练的模型](#基于大规模MRC数据再训练)
-  - [运行流程](#运行流程)
-  - [小小提示](#小小提示)
   - [仓库介绍](#仓库介绍)
   - [比赛](#比赛)
+  - [运行流程](#运行流程)
+  - [小小提示](#小小提示)
 
 
 ## 基于大规模MRC数据再训练
 
 此库发布的再训练模型，在 阅读理解/分类 等任务上均有大幅提高<br/>
-（已有多位小伙伴在Dureader、法研杯、医疗问答等多个比赛中取得**top5**的好成绩😁）
+（已有多位小伙伴在 Dureader、法研杯、医疗问答 等多个比赛中取得**top5**的好成绩😁）
 
 |                模型/数据集                 |  Dureader-2021  |  tencentmedical |
 | ------------------------------------------|--------------- | --------------- |
@@ -54,7 +54,7 @@
   * 此mrc模型可直接用于`open domain`，[点击体验](https://huggingface.co/luhua/chinese_pretrain_mrc_roberta_wwm_ext_large)
   * 将此模型放到下游 MRC/分类 任务微调可比直接使用预训练语言模型提高`2个点`/`1个点`以上
 * **合作**
-  * 相关训练数据以及使用更多数据训练的模型/一起打比赛 可邮箱联系~ 
+  * 相关训练数据以及使用更多数据训练的模型/一起打比赛 可邮箱联系(luhua98@foxmail.com)~ 
   
 ```
 ----- 使用方法 -----
@@ -70,6 +70,23 @@ model = AutoModelForQuestionAnswering.from_pretrained(f"luhua/{model_name}")
 tokenizer = BertTokenizer.from_pretrained(f'./{model_name}')
 model = AutoModelForQuestionAnswering.from_pretrained(f'./{model_name}')
 ```
+
+## 仓库介绍
+* **目的**
+  * **开源了基于MRC数据再训练的模型**，在MRC任务下微调，效果大幅优于使用预训练的语言模型，其次，旨在提供一个效果不错的`强基线`
+  * 有些[mrc比赛](#比赛)由于"年代久远"整理不过来（`others`文件夹），但方案和代码都有，对比着看就看懂了
+* **优化**
+  * 代码基于Hugginface的squad代码。之前自己开发，版本多且许多细节没有考虑，便转移到squad代码上迭代。但其实现的类缺乏对中文的支持，推理结果有一些影响，**修改之后 此库能较好的支持中文，抽取的答案精度也尽可能不受影响**
+  
+
+## 比赛
+
+* [疫情政务问答助手 第一](https://www.datafountain.cn/competitions/424)
+* [Dureader-2021语言与智能技术竞赛 第三](https://aistudio.baidu.com/aistudio/competition/detail/66?isFromLuge=true)
+* [Dureader-2020语言与智能技术竞赛 第二](https://aistudio.baidu.com/aistudio/competition/detail/28?isFromCcf=true)
+* [Dureader-2019语言与智能技术竞赛 第五](https://ai.baidu.com/broad/leaderboard?dataset=dureader)
+* [成语阅读理解 第二](https://www.biendata.xyz/competition/idiom/)
+* [莱斯杯军事阅读理解 第三](https://www.heywhale.com/home/competition/5d142d8cbb14e6002c04e14a/leaderboard)
 
 
 ## 运行流程
@@ -106,23 +123,6 @@ sh train_bert.sh  # sh test_bert.sh
 * 代码基于transformers 2.10.0版本，但是预训练模型可以使用其他版本加载。转换为tf可使用[转换](https://github.com/huggingface/transformers/blob/master/src/transformers/models/bert/convert_bert_pytorch_checkpoint_to_original_tf.py)
 * 预训练相关参数 [参考](https://github.com/basketballandlearn/MRC_Competition_Dureader/issues/33)
 
-
-## 仓库介绍
-* **目的**
-  * **开源了基于MRC数据再训练的模型**，在MRC任务下微调，效果大幅优于使用预训练的语言模型，其次，旨在提供一个效果不错的`强基线`
-  * 有些mrc比赛由于"年代久远"整理不过来（`others`文件夹），但方案和代码都有，对比着看就看懂了
-* **优化**
-  * 代码基于Hugginface的squad代码。之前自己开发，版本多且许多细节没有考虑，便转移到squad代码上迭代。但其实现的类缺乏对中文的支持，推理结果有一些影响，**修改之后 此库能较好的支持中文，抽取的答案精度也尽可能不受影响**
-  
-
-## 比赛
-
-* [疫情政务问答助手 第一](https://www.datafountain.cn/competitions/424)
-* [Dureader-2021语言与智能技术竞赛 第三](https://aistudio.baidu.com/aistudio/competition/detail/66?isFromLuge=true)
-* [Dureader-2020语言与智能技术竞赛 第二](https://aistudio.baidu.com/aistudio/competition/detail/28?isFromCcf=true)
-* [Dureader-2019语言与智能技术竞赛 第五](https://ai.baidu.com/broad/leaderboard?dataset=dureader)
-* [成语阅读理解 第二](https://www.biendata.xyz/competition/idiom/)
-* [莱斯杯军事阅读理解 第三](https://www.heywhale.com/home/competition/5d142d8cbb14e6002c04e14a/leaderboard)
 
 ## 感谢
 [zhangxiaoyu](https://github.com/Decalogue)  [huanghui](https://github.com/huanghuidmml)  [nanfulai](https://github.com/nanfulai)

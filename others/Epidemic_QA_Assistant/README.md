@@ -30,8 +30,8 @@
 * A榜和B榜得分均top1
 
 * <center class="half">
-      <img src="https://github.com/basketballandlearn/MRC_Competition_Repositories/blob/master/Epidemic_QA_Assistant/image/B榜排名.PNG" alt="B榜排名" width = "45%" align=right style="zoom: 20%;" />
-      <img src="https://github.com/basketballandlearn/MRC_Competition_Repositories/blob/master/Epidemic_QA_Assistant/image/A榜排名.PNG" alt="A榜排名" width = "45%" align=left style="zoom: 20%;" />
+      <img src="https://github.com/basketballandlearn/MRC_Competition_Dureader/tree/master/others/Epidemic_QA_Assistant/image/B榜排名.PNG" alt="B榜排名" width = "45%" align=right style="zoom: 20%;" />
+      <img src="https://github.com/basketballandlearn/MRC_Competition_Dureader/tree/master/others/Epidemic_QA_Assistant/image/A榜排名.PNG" alt="A榜排名" width = "45%" align=left style="zoom: 20%;" />
   <center>
 
   

@@ -16,10 +16,8 @@
 由于官方没有给出测试集，实验数据是在验证集上跑出来的
 
 ## 许多人询问，说明一下：
-* 1、代码是自己写的，不用squad的数据处理，可以换其他任何数据集，数据输入符合就行，也可以自己重写
+* 1、由于涉及多文档，故不用squad的数据处理，数据输入符合就行，也可以自己重写
 * 2、比赛提升主要使用 Multi-task训练、以及答案抽取，由于代码繁重，故这份代码只有单任务训练
-* 3、对于输出层，我只使用了一层全连接，可参考论文里的输出层，如下：
-![image](https://github.com/basketballandlearn/MRC_Competition_Repositories/blob/master/Dureader_2019/2.png)
 
 ## 代码：
 * 代码主要删减大量不必要代码，也将英文的数据处理改为中文的数据处理，方便阅读和掌握bert的代码。
@@ -31,7 +29,6 @@
 ## 小小提示：
 * 竞赛最终结果第七名, ROUGE-L:53.62, BLEU-4:54.97
 * 代码上传前已经跑通，所以如果碰到报错之类的信息，可能是代码路径不对、缺少安装包等问题，一步步解决，可以提issue。
-* 若有提升模型效果的想法，十分欢迎前来交流
 
 ### 环境(不支持cpu)
 * python3  
@@ -58,4 +55,4 @@
 * 到metric目录下， 运行 python3 mrc_eval.py predicts.json ref.json v1 即可
 
 #### 排行榜：
-![image](https://github.com/basketballandlearn/MRC_Competition_Repositories/blob/master/Dureader_2019/1.png)
+![image](https://github.com/basketballandlearn/MRC_Competition_Dureader/tree/master/others/Dureader_2019/1.png)

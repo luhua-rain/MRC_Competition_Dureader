@@ -9,7 +9,6 @@
 ## Contents
   - [基于大规模MRC数据再训练的模型](#基于大规模MRC数据再训练)
   - [仓库介绍](#仓库介绍)
-  - [比赛](#比赛)
   - [运行流程](#运行流程)
   - [小小提示](#小小提示)
 
@@ -78,16 +77,6 @@ model = AutoModelForQuestionAnswering.from_pretrained(f'./{model_name}')
 * **优化**
   * 代码基于Hugginface的squad代码。之前自己开发，版本多且许多细节没有考虑，便转移到squad代码上迭代。但其实现的类缺乏对中文的支持，推理结果有一些影响，**修改之后 此库能较好的支持中文，抽取的答案精度也尽可能不受影响**
   
-
-## 比赛
-
-* [疫情政务问答助手 第一](https://www.datafountain.cn/competitions/424)
-* [Dureader-2021语言与智能技术竞赛 第三](https://aistudio.baidu.com/aistudio/competition/detail/66?isFromLuge=true)
-* [Dureader-2020语言与智能技术竞赛 第二](https://aistudio.baidu.com/aistudio/competition/detail/28?isFromCcf=true)
-* [Dureader-2019语言与智能技术竞赛 第五](https://ai.baidu.com/broad/leaderboard?dataset=dureader)
-* [成语阅读理解 第二](https://www.biendata.xyz/competition/idiom/)
-* [莱斯杯军事阅读理解 第三](https://www.heywhale.com/home/competition/5d142d8cbb14e6002c04e14a/leaderboard)
-
 
 ## 运行流程
 

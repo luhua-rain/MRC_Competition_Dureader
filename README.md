@@ -114,5 +114,5 @@ sh train_bert.sh  # sh test_bert.sh
 
 
 ## 感谢
-[zhangxiaoyu](https://github.com/Decalogue)  [huanghui](https://github.com/huanghuidmml)  [nanfulai](https://github.com/nanfulai)
+[zhangxiaoyu](https://github.com/Decalogue) [zhongjialun](https://github.com/slaxes) [huanghui](https://github.com/huanghuidmml)  [nanfulai](https://github.com/nanfulai)
 
